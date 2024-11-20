@@ -3,18 +3,18 @@ import {getFirestore} from 'firebase/firestore'
 import {getAuth} from "firebase/auth";
 
 const firebaseConfig = {
-    apiKey: "AIzaSyCRwWd1E7JJiSuHK-J3FRXj8wjK3-WO84E",
-    authDomain: "reactdemojuly2024.firebaseapp.com",
-    projectId: "reactdemojuly2024",
-    storageBucket: "reactdemojuly2024.appspot.com",
-    messagingSenderId: "140474381397",
-    appId: "1:140474381397:web:314537f93c0cd60f1090dc"
+  apiKey: "AIzaSyDMbAL16428sWP2x92YZLKxLnPwcyfpBIE",
+  authDomain: "labact-f210c.firebaseapp.com",
+  projectId: "labact-f210c",
+  storageBucket: "labact-f210c.firebasestorage.app",
+  messagingSenderId: "962539179627",
+  appId: "1:962539179627:web:73f3ec6add0332b5816b2e",
+  measurementId: "G-5995NX31WY"
 };
 
-  initializeApp(firebaseConfig);
+initializeApp(firebaseConfig);
 
 const db = getFirestore();
-
 const auth = getAuth();
 
-export {db, auth}
+export { db, auth, firebaseConfig }

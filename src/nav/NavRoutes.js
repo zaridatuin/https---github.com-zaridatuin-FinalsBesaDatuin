@@ -1,6 +1,6 @@
-import React, {useContext} from "react";
-import {UserContext} from "../context/UserContext";
-import {Navigate, Route, Routes} from "react-router-dom";
+import React, { useContext } from "react";
+import { UserContext } from "../context/UserContext";
+import { Navigate, Route, Routes } from "react-router-dom";
 import Home from "../pages/Home";
 import Login from "../pages/login/Login";
 import About from "../pages/About";
@@ -8,20 +8,24 @@ import Contact from "../pages/Contact";
 import Article from "../pages/Article";
 import FormArticle from "../pages/FormArticle";
 import Signup from "../pages/signup/Signup";
+import Menu from '../pages/Menu';
+import TableReservation from '../pages/TableReservation'; // Import the new page
 
 export default function NavRoutes() {
-    const {user} = useContext(UserContext);
+    const { user } = useContext(UserContext);
     return (
         <Routes>
-            <Route path="/" element={user ? <Home/> : <Login />}/>
-            <Route path="/about" element={user ?<About /> : <Login />}/>
-            <Route path="/contact" element={user ?<Contact />  : <Login />}/>
-            <Route path="/articles/:urlId" element={user ?<Article/> : <Login />}/>
-            <Route path="/edit/:urlId" element={user ?<FormArticle /> : <Login />}/>
-            <Route path="/new" element={user ?<FormArticle /> : <Login />}/>
-            <Route path="/login" element={<Login />}/>
-            <Route path="/signup" element={<Signup /> }/>
-            <Route path="/*" element={<Navigate to="/"/> }/>
+            <Route path="/" element={user ? <Home /> : <Login />} />
+            <Route path="/about" element={user ? <About /> : <Login />} />
+            <Route path="/contact" element={user ? <Contact /> : <Login />} />
+            <Route path="/articles/:urlId" element={user ? <Article /> : <Login />} />
+            <Route path="/edit/:urlId" element={user ? <FormArticle /> : <Login />} />
+            <Route path="/new" element={user ? <FormArticle /> : <Login />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<Signup />} />
+            <Route path="/menu" element={<Menu />} />
+            <Route path="/reservation" element={<TableReservation />} /> {/* Add the new route */}
+            <Route path="/*" element={<Navigate to="/" />} />
         </Routes>
     );
 }
