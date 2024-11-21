@@ -3,8 +3,8 @@ import { getFirestore, collection, getDocs, addDoc } from 'firebase/firestore';
 import { initializeApp } from 'firebase/app';
 import 'firebase/firestore';
 import { firebaseConfig } from '../firebase/config';
-import 'bootstrap/dist/css/bootstrap.min.css'; 
-import './Menu.css'; 
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './Menu.css';
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
@@ -76,6 +76,10 @@ export default function Menu() {
         }
     };
 
+    const getImage = (imageName) => {
+        return `${process.env.PUBLIC_URL}/img/${imageName}`;
+    };
+
     return (
         <div className="container">
             <h1>Menu</h1>
@@ -119,7 +123,7 @@ export default function Menu() {
                 {menuItems.map((item, index) => (
                     <div key={index} className="col-md-4 mb-4">
                         <div className="card h-100">
-                            <img src={item.image} className="card-img-top" alt={item.title} />
+                            <img src={getImage(item.image)} className="card-img-top" alt={item.title} />
                             <div className="card-body">
                                 <h5 className="card-title">{item.title}</h5>
                                 <p className="card-text">{item.description}</p>
