@@ -33,6 +33,7 @@ export default function NavigationBar() {
                             <NavLink to="/contact"><div className="nav-button">Contact</div></NavLink>
                             <NavLink to="/menu"><div className="nav-button">Menu</div></NavLink>
                             <NavLink to="/reservation"><div className="nav-button">Reservation</div></NavLink>
+                            <NavLink to="/feedback"><div className="nav-button">Feedback</div></NavLink>
                         </Nav>
                     )}
                     

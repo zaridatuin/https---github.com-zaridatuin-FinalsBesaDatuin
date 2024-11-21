@@ -8,6 +8,7 @@ import Contact from "../pages/Contact";
 import Signup from "../pages/signup/Signup";
 import Menu from '../pages/Menu';
 import TableReservation from '../pages/TableReservation';
+import Feedback from '../pages/Feedback';
 
 export default function NavRoutes() {
     const { user } = useContext(UserContext);
@@ -20,6 +21,7 @@ export default function NavRoutes() {
             <Route path="/signup" element={<Signup />} />
             <Route path="/menu" element={<Menu />} />
             <Route path="/reservation" element={<TableReservation />} /> {/* Add the new route */}
+            <Route path="/feedback" element={user ? <Feedback /> : <Login />} />
             <Route path="/*" element={<Navigate to="/" />} />
         </Routes>
     );

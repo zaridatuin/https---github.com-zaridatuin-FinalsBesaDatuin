@@ -3,6 +3,7 @@ import { getFirestore, collection, addDoc } from 'firebase/firestore';
 import { initializeApp } from 'firebase/app';
 import { firebaseConfig } from '../firebase/config';
 import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
+import './TableReservation.css'; // Import the CSS file
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
@@ -41,7 +42,7 @@ export default function TableReservation() {
     };
 
     return (
-        <div className="container mt-5">
+        <div className="container reservation-container mt-5">
             <h1>Table Reservation</h1>
             <form onSubmit={handleSubmit}>
                 <div className="mb-3">
