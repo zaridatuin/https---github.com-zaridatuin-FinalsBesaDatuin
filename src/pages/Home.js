@@ -74,7 +74,7 @@ export default function Home() {
       <div className="about-part">
         <div className="about-tab left-about-tab">
           <h1>About Us</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <p>Nestled in the heart of Marikina, Two’s serves up the perfect combination of flavor, quality, and comfort. Our burgers are crafted with the finest locally sourced ingredients, from juicy, perfectly seasoned patties to freshly baked buns. Masarap dito man promise.</p>
           <iframe title="twosmap" loading="lazy" allowfullscreen src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=twos&zoom=13&maptype=roadmap"></iframe>
         </div>
 
@@ -82,21 +82,21 @@ export default function Home() {
           <NavLink to={user ? "/menu" : "/login"}>
             <div className="view-menu right-tabs">
               <h1>View Menu</h1>
-              <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+              <p>Gutom ka man? Click here to view our menu and order for delivery!</p>
             </div>
           </NavLink>
 
           <NavLink to={user ? "/reservation" : "/login"}>
             <div className="view-reservation right-tabs">
               <h1>Reserve Tables</h1>
-              <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+              <p>Planning to drop by? Click Here to reserve a seat!</p>
             </div>
           </NavLink>
 
           <NavLink to={user ? "/feedback" : "/login"}>
             <div className="view-feedback right-tabs">
               <h1>Customer Reviews</h1>
-              <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+              <p>Click here to see what others say about us or leave a review.</p>
             </div>
           </NavLink>
         </div>

@@ -12,7 +12,7 @@ export default function Footer() {
                     <div class="col-lg-4 col-md-12 mb-4 mb-md-0">
                         <h5 class="text-uppercase mb-4">About Two's</h5>
 
-                        <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti.</p>
+                        <p>Sa Marikina to. Masarap dito man promise. Sarado nga lang pag Wednesday. BUY TWOS.</p>
 
                         <div class="mt-4">
                             <a type="button" href="https://www.facebook.com/buytwos" target="_blank" rel="noreferrer" className="social-icons"><FaFacebook size={40} color="#3b5998" /></a>
