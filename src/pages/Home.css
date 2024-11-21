@@ -47,16 +47,52 @@
   border: 1px solid black; /* REMOVE THIS AFTER */
 }
 
-.home .left-about-tab {
-  padding: 2em;
-}
+/* LEFT */
+  .home .left-about-tab {
+    padding: 2em;
+  }
 
-.home iframe {
-  width: 100%;
-  height: 400px;
-}
+  .home iframe {
+    width: 100%;
+    height: 400px;
+  }
 
-  /* VIEW MENU */
+/* RIGHT */
+  .home .right-tabs {
+    padding: 2em;
+    width: 100%;
+    height: 33.33333%;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+  }
 
+  .home .view-menu {
+    background-color: #777;
+  }
+  .home .view-reservation {
+    background-color: #777;
+  }
+  .home .view-feedback {
+    background-color: #777;
+  }
 
+  .home .view-menu:hover {
+    color: white;
+    opacity: 1;
+  }
+  .home .view-reservation:hover {
+    color: white;
+    opacity: 1;
+  }
+  .home .view-feedback:hover {
+    color: white;
+    opacity: 1;
+  }
 
+/* CONTACT FOOTER */
+  .contact-part {
+    width: 100%;
+    height: 250px;
+    border: 1px solid black;
+    background-color: #777;
+  }

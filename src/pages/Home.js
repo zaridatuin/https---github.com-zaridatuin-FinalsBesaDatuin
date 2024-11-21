@@ -30,6 +30,7 @@ export default function Home() {
   }
 
   return (
+    <>
     <div className="home">
       <Carousel className="carousel-class">
 
@@ -68,7 +69,6 @@ export default function Home() {
       </Carousel>
 
       <div className="about-part">
-
         <div className="about-tab left-about-tab">
           <h1>About Us</h1>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
@@ -76,16 +76,24 @@ export default function Home() {
         </div>
 
         <div className="about-tab right-about-tab">
-        
+          <div className="view-menu right-tabs">
+            <h1>View Menu</h1>
+            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+          </div>
+          <div className="view-reservation right-tabs">
+            <h1>Reserve Tables</h1>
+            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+          </div>
+          <div className="view-feedback right-tabs">
+            <h1>Customer Reviews</h1>
+            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+          </div>
         </div>
-
-      </div>
-
-      <div className="contact-part">
-
-
       </div>
 
     </div>
+    <div className="contact-part">
+    </div>
+    </>
   )
 }
