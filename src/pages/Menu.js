@@ -107,7 +107,7 @@ export default function Menu() {
     return (
         <div className="container">
             <h1>Menu</h1>
-            <p>Here you can find our delicious menu items.</p>
+        
             <button onClick={() => setShowForm(!showForm)}>
                 {showForm ? 'Cancel' : '+'}
             </button>
@@ -138,14 +138,14 @@ export default function Menu() {
                     {cart.map((item, index) => (
                         <div key={index}>
                             <p>{item.title} x {item.quantity} 
-                                <button onClick={() => handleDecrementQuantity(index)}>-</button>
-                                <button onClick={() => handleIncrementQuantity(index)}>+</button>
+                                <button className='increment-btn'onClick={() => handleDecrementQuantity(index)}>-</button>
+                                <button className='decrement-btn' onClick={() => handleIncrementQuantity(index)}>+</button>
                             </p>
                         </div>
                     ))}
-                    <p>Total: ${cart.reduce((total, item) => total + item.price * item.quantity, 0)}</p>
-                    <button onClick={handleOrder}>Order</button>
-                    <button onClick={handleClearCart}>Clear Cart</button>
+                    <p>Total: ₱{cart.reduce((total, item) => total + item.price * item.quantity, 0)}</p>
+                    <button className='order-btn' onClick={handleOrder}>Order</button>
+                    <button className='clear-cart-btn'onClick={handleClearCart}>Clear Cart</button>
                 </div>
             )}
             <div className="row">
@@ -157,7 +157,7 @@ export default function Menu() {
                                 <h5 className="card-title">{item.title}</h5>
                                 <p className="card-text">{item.description}</p>
                                 <p className="card-text"><strong>₱{item.price}</strong></p>
-                                <button onClick={() => handleAddToCart(item, 1)}>Add to Cart</button>
+                                <button className='add-to-cart-btn' onClick={() => handleAddToCart(item, 1)}>Add to Cart</button>
                             </div>
                         </div>
                     </div>
