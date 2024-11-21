@@ -39,11 +39,13 @@
     position: fixed;
     top: 10px;
     right: 10px;
-    background: white;
-    border: 1px solid #ccc;
-    padding: 10px;
-    width: 300px;
-    z-index: 1000;
+    background: rgb(255, 255, 255);
+    border: 1px solid rgba(0, 0, 0, 0.125); 
+    padding: 20px; 
+    width: 300px; 
+    height: 500px; 
+    z-index: 2000; 
+    opacity: 0.95; 
 }
 
 .close-cart {
@@ -60,4 +62,32 @@
 .input-group .btn {
     padding: 5px 10px; 
     font-size: 0.875rem; 
+}
+
+.increment-btn, .decrement-btn {
+    background-color: #777219;
+    color: white;
+    border: none;
+    padding: 2px 15px;
+    margin: 0 6px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.increment-btn:hover, .decrement-btn:hover {
+    background-color: #0056b3;
+}
+
+.order-btn, .clear-cart-btn {
+    background-color: #777219;
+    color: white;
+    border: none;
+    padding: 5px 25px;
+    margin: 5px 5px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.order-btn:hover, .clear-cart-btn:hover {
+    background-color: #218838;
 }

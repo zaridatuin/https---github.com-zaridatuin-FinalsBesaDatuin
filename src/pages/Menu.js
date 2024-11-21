@@ -138,14 +138,14 @@ export default function Menu() {
                     {cart.map((item, index) => (
                         <div key={index}>
                             <p>{item.title} x {item.quantity} 
-                                <button onClick={() => handleDecrementQuantity(index)}>-</button>
-                                <button onClick={() => handleIncrementQuantity(index)}>+</button>
+                                <button className='increment-btn'onClick={() => handleDecrementQuantity(index)}>-</button>
+                                <button className='decrement-btn' onClick={() => handleIncrementQuantity(index)}>+</button>
                             </p>
                         </div>
                     ))}
-                    <p>Total: ${cart.reduce((total, item) => total + item.price * item.quantity, 0)}</p>
-                    <button onClick={handleOrder}>Order</button>
-                    <button onClick={handleClearCart}>Clear Cart</button>
+                    <p>Total: ₱{cart.reduce((total, item) => total + item.price * item.quantity, 0)}</p>
+                    <button className='order-btn' onClick={handleOrder}>Order</button>
+                    <button className='clear-cart-btn'onClick={handleClearCart}>Clear Cart</button>
                 </div>
             )}
             <div className="row">
