@@ -8,18 +8,18 @@
     margin-right: 2em !important;
 }
 
-.navbar a {
+.navbar .hover-active-design {
     text-decoration: none !important;
     color: #777 !important;
     transition: background-color 0.3s ease;
 }
 
-.navbar a:hover {
+.navbar .hover-active-design:hover {
     background-color: #777;
     color: white !important;
 }
 
-.navbar a.active {
+.navbar .hover-active-design.active {
     background-color: #777;
     color: white !important;
 }

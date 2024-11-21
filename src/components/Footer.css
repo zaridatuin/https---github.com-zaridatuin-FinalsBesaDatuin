@@ -7,5 +7,5 @@ li {
 }
 
 .remove-margin {
-    margin-top: 0px;
+    margin-top: 0px !important;
 }
