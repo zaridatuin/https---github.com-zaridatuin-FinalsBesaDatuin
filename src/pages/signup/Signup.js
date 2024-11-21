@@ -28,30 +28,26 @@ export default function Signup() {
 
   return (
       <form onSubmit={handleSubmit} className={styles['signup-form']}>
-        <h2>sign up</h2>
+
+        <h3>Sign Up</h3>
+
         <label>
-          <span>email:</span>
-          <input
-              type="email"
-              ref={emailRef}
-          />
+          <span>Full Name:</span>
+          <input type="text" ref={displayNameRef} />
         </label>
+
         <label>
-          <span>password:</span>
-          <input
-              type="password"
-              ref={passwordRef}
-          />
+          <span>E-mail:</span>
+          <input type="email" ref={emailRef} />
         </label>
+
         <label>
-          <span>display name:</span>
-          <input
-              type="text"
-              ref={displayNameRef}
-          />
+          <span>Password:</span>
+          <input type="password" ref={passwordRef} />
         </label>
-        { !isPending && <button className="btn">sign up</button> }
-        { isPending && <button className="btn" disabled>loading</button> }
+
+        { !isPending && <button className="btn">Sign Up</button> }
+        { isPending && <button className="btn" disabled>Loading...</button> }
         { error && <p>{error}</p> }
       </form>
   )

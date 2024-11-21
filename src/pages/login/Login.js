@@ -1,5 +1,5 @@
 import { useState,useRef } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, NavLink } from 'react-router-dom'
 
 // styles
 import styles from './Login.module.css'
@@ -30,24 +30,35 @@ export default function Login() {
 
   return (              
       <form onSubmit={handleSubmit} className={styles['login-form']}>
-        <h2>login</h2>
+
+        <h3>Login</h3>
+
         <label>
-          <span>email:</span>
-          <input 
-            type="email"
-            ref={email}
-          />
+          <span>E-mail:</span>
+          <input type="email" ref={email} />
         </label>
+
         <label>
-          <span>password:</span>
-          <input 
-            type="password"
-            ref={password}
-          />
+          <span>Password:</span>
+          <input type="password" ref={password} />
         </label>
-        { !isPending && <button className="btn">Login</button> }
-        { isPending && <button className="btn" disabled>loading</button> }
-        { error && <p>{error}</p> }      
+
+        { !isPending && (
+          <>
+            <button className="btn">Login</button>
+            <NavLink to="/signup"><button className="btn">Sign Up</button></NavLink>
+          </>
+        )}
+
+        { isPending && <button className="btn" disabled>Loading...</button> }
+
+        { error && (
+          <>
+            <br />
+            <p>{error}</p>
+          </>
+        )}      
+
       </form>
   )
 }
