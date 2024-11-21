@@ -1,7 +1,9 @@
 .navbar {
     height: 7vh !important;
     padding: 0px !important;
-    opacity: 0.95;
+    opacity: 0.9;
+    background-color: #0b0b0b !important;
+    font-family: 'Palanquin' !important;
 }
 
 .navbar .navbar-brand {
@@ -15,13 +17,13 @@
 }
 
 .navbar .hover-active-design:hover {
-    background-color: #777;
-    color: white !important;
+    background-color: #fe7223;
+    color: #fffcf7 !important;
 }
 
 .navbar .hover-active-design.active {
-    background-color: #777;
-    color: white !important;
+    background-color: #fe7223;
+    color: #fffcf7 !important;
 }
 
 .navbar .container {
@@ -40,7 +42,7 @@
 }
 
 .navbar .nav-button {
-    width: 100px;
+    width: 120px;
     height: 100%;
     margin: 0px;
     display: flex;
@@ -62,3 +64,29 @@
     width: 85px;
     height: auto;
 }
+
+.navbar .hello-user {
+    color: #fe7223;
+}
+
+@font-face {
+    font-family: 'Palanquin';
+    src: url('../fonts/PalanquinDark-Regular.ttf') format('truetype'); 
+    font-weight: 400; 
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'Poppins';
+    src: url('../fonts/Poppins-Regular.ttf') format('truetype'); 
+    font-weight: 600; 
+    font-style: normal;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Palanquin' !important;
+  }
+  
+  p {
+    font-family: 'Poppins' !important;
+  }

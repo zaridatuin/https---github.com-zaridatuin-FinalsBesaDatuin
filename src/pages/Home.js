@@ -5,7 +5,7 @@ import EditIcon from '../assets/edit.svg'
 
 import Carousel from 'react-bootstrap/Carousel';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Footer from '../components/Footer';
+import Footer from '../components/footer.js';
 
 import { UserContext } from "../context/UserContext";
 

@@ -4,7 +4,7 @@ import { UserContext } from '../context/UserContext';
 import { useNavigate } from 'react-router-dom';
 import { logout } from "../services/authService";
 import './Navbar.css';
-import Footer from '../components/Footer';
+import Footer from '../components/footer';
 
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
@@ -45,7 +45,7 @@ export default function NavigationBar() {
 
                     {user && (
                         <Nav>
-                            <div className="nav-button">Hello, {user.displayName}</div>
+                            <div className="nav-button hello-user">Hello, {user.displayName}</div>
                             <a onClick={handleLogout} className="hover-active-design"><div className="nav-button">Logout</div></a>
                         </Nav>
                     )}
