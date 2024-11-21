@@ -1,11 +1,13 @@
 import { Link, useNavigate, NavLink } from 'react-router-dom'
-import { useEffect,useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
 import DeleteIcon from '../assets/delete.svg'
 import EditIcon from '../assets/edit.svg'
 
 import Carousel from 'react-bootstrap/Carousel';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Footer from '../components/Footer';
+import Footer from '../components/footer';
+
+import { UserContext } from "../context/UserContext";
 
 // styles
 import './Home.css'
@@ -31,6 +33,7 @@ export default function Home() {
     navigate(`/edit/${id}`)
   }
 
+  const { user } = useContext(UserContext);
   return (
     <>
     <div className="home">
@@ -41,8 +44,8 @@ export default function Home() {
             <img src="../img/B1.jpg" alt='B1' />
           </div>
           <Carousel.Caption>
-            <h3>First slide label</h3>
-            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+            <h3>Classic Burger</h3>
+            <p>Beef Patty w/ Cheese, Tomato, Lettuce, Onions, Sauce #2, Brioche Bun</p>
           </Carousel.Caption>
         </Carousel.Item>
 
@@ -51,8 +54,8 @@ export default function Home() {
             <img src="../img/B8.jpg" alt='B8' />
           </div>
           <Carousel.Caption>
-            <h3>Second slide label</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <h3>PB Bacon Burger</h3>
+            <p>Beef Patty w/ Cheese, Peanut Butter, Maple Syrup, Bacon, Brioche Bun</p>
           </Carousel.Caption>
         </Carousel.Item>
 
@@ -61,10 +64,8 @@ export default function Home() {
             <img src="../img/B5.jpg" alt='B5' />
           </div>
           <Carousel.Caption>
-            <h3>Third slide label</h3>
-            <p>
-              Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-            </p>
+            <h3>Surf & Turf</h3>
+            <p>Beef Patty w/ Cheese, Garlic Buttered Shrimps w/ Crabfat Sauce, Lettuce</p>
           </Carousel.Caption>
         </Carousel.Item>
 
@@ -78,21 +79,21 @@ export default function Home() {
         </div>
 
         <div className="about-tab right-about-tab">
-          <NavLink to="/menu">
+          <NavLink to={user ? "/menu" : "/login"}>
             <div className="view-menu right-tabs">
               <h1>View Menu</h1>
               <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
             </div>
           </NavLink>
 
-          <NavLink to="/reservation">
+          <NavLink to={user ? "/reservation" : "/login"}>
             <div className="view-reservation right-tabs">
               <h1>Reserve Tables</h1>
               <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
             </div>
           </NavLink>
 
-          <NavLink to="/feedback">
+          <NavLink to={user ? "/feedback" : "/login"}>
             <div className="view-feedback right-tabs">
               <h1>Customer Reviews</h1>
               <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>

@@ -22,25 +22,25 @@ export default function NavigationBar() {
         <>
         <Navbar fixed="top" collapseOnSelect expand="lg" className="bg-body-tertiary">
             <Container>
-                <Navbar.Brand><img src="../img/TwosLogo.png" alt="TwosLogo" className="nav-logo"/></Navbar.Brand>
+                <NavLink to="/" className="logo-link"><Navbar.Brand><img src="../img/TwosLogo.png" alt="TwosLogo" className="nav-logo"/></Navbar.Brand></NavLink>
 
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     {user && (
                         <Nav className="me-auto">
-                            <NavLink to="/"><div className="nav-button">Home</div></NavLink>
-                            <NavLink to="/about"><div className="nav-button">About</div></NavLink>
-                            <NavLink to="/contact"><div className="nav-button">Contact</div></NavLink>
-                            <NavLink to="/menu"><div className="nav-button">Menu</div></NavLink>
-                            <NavLink to="/reservation"><div className="nav-button">Reservation</div></NavLink>
-                            <NavLink to="/feedback"><div className="nav-button">Feedback</div></NavLink>
+                            <NavLink to="/" className="hover-active-design"><div className="nav-button">Home</div></NavLink>
+                            <NavLink to="/about" className="hover-active-design"><div className="nav-button">About</div></NavLink>
+                            <NavLink to="/contact" className="hover-active-design"><div className="nav-button">Contact</div></NavLink>
+                            <NavLink to="/menu" className="hover-active-design"><div className="nav-button">Menu</div></NavLink>
+                            <NavLink to="/reservation" className="hover-active-design"><div className="nav-button">Reservation</div></NavLink>
+                            <NavLink to="/feedback" className="hover-active-design"><div className="nav-button">Feedback</div></NavLink>
                         </Nav>
                     )}
                     
                     {!user && (
                         <Nav className="login-signup-buttons">
-                            <NavLink to="/login"><div className="nav-button">Login</div></NavLink>
-                            <NavLink to="/signup"><div className="nav-button">Sign Up</div></NavLink>
+                            <NavLink to="/login" className="hover-active-design"><div className="nav-button">Login</div></NavLink>
+                            <NavLink to="/signup" className="hover-active-design"><div className="nav-button">Sign Up</div></NavLink>
                         </Nav>
                     )}
 
