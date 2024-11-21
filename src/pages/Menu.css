@@ -31,8 +31,11 @@
 }
 
 .cart-button img {
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
+    border-radius: 600%; 
+    border: 5px solid #020202; 
+    z-index: 3000;
 }
 
 .cart {
@@ -103,4 +106,10 @@
 
 .add-to-cart-btn:hover {
     background-color: #b7bcc3;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
 }

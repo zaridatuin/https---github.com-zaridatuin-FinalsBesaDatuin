@@ -106,11 +106,12 @@ export default function Menu() {
 
     return (
         <div className="container">
-            <h1>Menu</h1>
+            <h1 className="menu-title">Menu</h1>
         
-            <button onClick={() => setShowForm(!showForm)}>
+            {/* Remove the Add Item button */}
+            {/* <button onClick={() => setShowForm(!showForm)}>
                 {showForm ? 'Cancel' : '+'}
-            </button>
+            </button> */}
             {showForm && (
                 <form onSubmit={handleAddItem} className="mb-4">
                     <div className="mb-3">
