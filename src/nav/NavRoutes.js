@@ -7,7 +7,7 @@ import About from "../pages/About";
 import Contact from "../pages/Contact";
 import Signup from "../pages/signup/Signup";
 import Menu from '../pages/Menu';
-import TableReservation from '../pages/TableReservation'; // Import the new page
+import TableReservation from '../pages/TableReservation';
 
 export default function NavRoutes() {
     const { user } = useContext(UserContext);
