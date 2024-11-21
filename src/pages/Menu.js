@@ -109,6 +109,7 @@ export default function Menu() {
             </button>
             {showCart && (
                 <div className="cart">
+                    <button className="close-cart" onClick={() => setShowCart(false)}>X</button>
                     <h2>Cart</h2>
                     {cart.map((item, index) => (
                         <div key={index}>
