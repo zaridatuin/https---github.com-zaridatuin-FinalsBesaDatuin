@@ -1,10 +1,8 @@
-.home .card {
-    padding: 20px;
-    border: 1px solid #e4e4e4;
-    border-radius: 4px;
-    box-shadow: 4px 4px 6px rgba(0,0,0,0.05);
-    margin-bottom: 20px;
-  }
+.home {
+  width: 70%;
+  height: auto;
+  margin: 0px auto;
+}
 
   
   .icon {
@@ -17,3 +15,48 @@
     width: 3%;
     height: 3%;
   }
+
+.home img {
+  width: 100%; 
+  height: 100%; 
+  object-fit: cover;
+  object-position: center;
+  position: absolute;
+}
+
+.home .img-container {
+  width: 100%;
+  height: 60vh;
+}
+
+.home .carousel-class {
+  width: 100%;
+  margin: 0px auto;
+}
+
+/* ABOUT PART */
+.home .about-part {
+  width: 100%;
+  height: auto;
+  display: flex;
+}
+
+.home .about-tab {
+  width: 50%;
+  height: auto;
+  border: 1px solid black; /* REMOVE THIS AFTER */
+}
+
+.home .left-about-tab {
+  padding: 2em;
+}
+
+.home iframe {
+  width: 100%;
+  height: 400px;
+}
+
+  /* VIEW MENU */
+
+
+

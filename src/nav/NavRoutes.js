@@ -22,6 +22,7 @@ export default function NavRoutes() {
             <Route path="/menu" element={<Menu />} />
             <Route path="/reservation" element={<TableReservation />} /> {/* Add the new route */}
             <Route path="/feedback" element={user ? <Feedback /> : <Login />} />
+            <Route path="/reservation" element={<TableReservation />} />
             <Route path="/*" element={<Navigate to="/" />} />
         </Routes>
     );
