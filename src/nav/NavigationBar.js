@@ -21,7 +21,8 @@ export default function NavigationBar() {
 
     return (
         <>
-        <Navbar fixed="top" collapseOnSelect expand="lg" className="bg-body-tertiary">
+        <div className="navbarparent">
+        <Navbar fixed="top" collapseOnSelect expand="lg" className="bg-body-tertiary dark-background">
             <Container>
                 <NavLink to="/" className="logo-link"><Navbar.Brand><img src="../img/TwosLogo.png" alt="TwosLogo" className="nav-logo"/></Navbar.Brand></NavLink>
 
@@ -53,7 +54,7 @@ export default function NavigationBar() {
                 </Navbar.Collapse>
             </Container>
         </Navbar>
-
+        </div>
         </>
     );
 }

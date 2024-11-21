@@ -5,6 +5,8 @@ import 'firebase/firestore';
 import { firebaseConfig } from '../firebase/config';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Menu.css';
+import Footer from '../components/Footer.js';
+
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
@@ -105,6 +107,7 @@ export default function Menu() {
     };
 
     return (
+        <>
         <div className="container">
             <h1 className="menu-title">Menu</h1>
         
@@ -164,6 +167,10 @@ export default function Menu() {
                     </div>
                 ))}
             </div>
+
+            
         </div>
+        <Footer />
+        </>
     );
 }

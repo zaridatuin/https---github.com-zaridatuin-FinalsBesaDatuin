@@ -4,6 +4,7 @@ import { initializeApp } from 'firebase/app';
 import { firebaseConfig } from '../firebase/config';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Feedback.css';
+import Footer from '../components/Footer'
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
@@ -54,6 +55,7 @@ export default function Feedback() {
     };
 
     return (
+        <>
         <div className="container feedback-container mt-5">
             <h1>Customer Reviews</h1>
             <button className="btn btn-secondary mt-4" onClick={() => setShowForm(!showForm)}>
@@ -92,5 +94,8 @@ export default function Feedback() {
                 ))}
             </div>
         </div>
+        
+        <Footer />
+        </>
     );
 }

@@ -4,6 +4,7 @@ import { initializeApp } from 'firebase/app';
 import { firebaseConfig } from '../firebase/config';
 import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
 import './TableReservation.css'; // Import the CSS file
+import Footer from '../components/Footer.js';
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
@@ -42,6 +43,7 @@ export default function TableReservation() {
     };
 
     return (
+        <>
         <div className="container reservation-container mt-5">
             <h1>Table Reservation</h1>
             <form onSubmit={handleSubmit}>
@@ -72,5 +74,7 @@ export default function TableReservation() {
                 <button type="submit" className="btn btn-primary">Submit Reservation</button>
             </form>
         </div>
+        <Footer />
+        </>
     );
 }

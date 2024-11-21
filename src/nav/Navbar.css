@@ -6,6 +6,10 @@
     font-family: 'Palanquin' !important;
 }
 
+.navbarparent .dark-background {
+    background-color: #0b0b0b !important;
+}
+
 .navbar .navbar-brand {
     margin-right: 2em !important;
 }
