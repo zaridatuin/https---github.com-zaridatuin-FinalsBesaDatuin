@@ -47,7 +47,7 @@ export default function NavigationBar() {
                     {user && (
                         <Nav>
                             <div className="nav-button">Hello, {user.displayName}</div>
-                            <a onClick={handleLogout}><div className="nav-button">Logout</div></a>
+                            <a onClick={handleLogout} className="hover-active-design"><div className="nav-button">Logout</div></a>
                         </Nav>
                     )}
 
