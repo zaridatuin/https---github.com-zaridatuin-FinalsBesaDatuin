@@ -1,0 +1,11 @@
+li {
+    list-style-type: none;
+}
+
+.social-icons {
+    margin-right: 1em;
+}
+
+.remove-margin {
+    margin-top: 0px;
+}
