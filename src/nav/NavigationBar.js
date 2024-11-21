@@ -26,17 +26,18 @@ export default function NavigationBar() {
 
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
-
-                    <Nav className="me-auto">
-                        <NavLink to="/"><div className="nav-button">Home</div></NavLink>
-                        <NavLink to="/about"><div className="nav-button">About</div></NavLink>
-                        <NavLink to="/contact"><div className="nav-button">Contact</div></NavLink>
-                        <NavLink to="/menu"><div className="nav-button">Menu</div></NavLink>
-                        <NavLink to="/reservation"><div className="nav-button">Reservation</div></NavLink>
-                    </Nav>
-
+                    {user && (
+                        <Nav className="me-auto">
+                            <NavLink to="/"><div className="nav-button">Home</div></NavLink>
+                            <NavLink to="/about"><div className="nav-button">About</div></NavLink>
+                            <NavLink to="/contact"><div className="nav-button">Contact</div></NavLink>
+                            <NavLink to="/menu"><div className="nav-button">Menu</div></NavLink>
+                            <NavLink to="/reservation"><div className="nav-button">Reservation</div></NavLink>
+                        </Nav>
+                    )}
+                    
                     {!user && (
-                        <Nav>
+                        <Nav className="login-signup-buttons">
                             <NavLink to="/login"><div className="nav-button">Login</div></NavLink>
                             <NavLink to="/signup"><div className="nav-button">Sign Up</div></NavLink>
                         </Nav>
