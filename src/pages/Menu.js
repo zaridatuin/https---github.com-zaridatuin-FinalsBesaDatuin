@@ -129,7 +129,7 @@ export default function Menu() {
                 </form>
             )}
             <button className="cart-button" onClick={() => setShowCart(!showCart)}>
-                <img src="/path/to/cart-icon.png" alt="Cart" />
+                <img src="../img/cart.png" alt="Cart" />
             </button>
             {showCart && (
                 <div className="cart">
@@ -157,7 +157,7 @@ export default function Menu() {
                                 <h5 className="card-title">{item.title}</h5>
                                 <p className="card-text">{item.description}</p>
                                 <p className="card-text"><strong>₱{item.price}</strong></p>
-                                <button className="btn btn-primary" onClick={() => handleAddToCart(item, 1)}>Add to Cart</button>
+                                <button onClick={() => handleAddToCart(item, 1)}>Add to Cart</button>
                             </div>
                         </div>
                     </div>
