@@ -91,3 +91,16 @@
 .order-btn:hover, .clear-cart-btn:hover {
     background-color: #218838;
 }
+
+.add-to-cart-btn {
+    background-color: #676d73;
+    color: white;
+    border: none;
+    padding: 5px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.add-to-cart-btn:hover {
+    background-color: #b7bcc3;
+}

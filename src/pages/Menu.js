@@ -107,7 +107,7 @@ export default function Menu() {
     return (
         <div className="container">
             <h1>Menu</h1>
-            <p>Here you can find our delicious menu items.</p>
+        
             <button onClick={() => setShowForm(!showForm)}>
                 {showForm ? 'Cancel' : '+'}
             </button>
@@ -157,7 +157,7 @@ export default function Menu() {
                                 <h5 className="card-title">{item.title}</h5>
                                 <p className="card-text">{item.description}</p>
                                 <p className="card-text"><strong>₱{item.price}</strong></p>
-                                <button onClick={() => handleAddToCart(item, 1)}>Add to Cart</button>
+                                <button className='add-to-cart-btn' onClick={() => handleAddToCart(item, 1)}>Add to Cart</button>
                             </div>
                         </div>
                     </div>
