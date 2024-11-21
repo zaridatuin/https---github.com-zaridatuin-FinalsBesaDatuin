@@ -72,6 +72,7 @@
 
 .increment-btn, .decrement-btn {
     background-color: #fe7223;
+    border-color: #9e4917;
     color: white;
     border: none;
     padding: 2px 15px;
@@ -81,11 +82,12 @@
 }
 
 .increment-btn:hover, .decrement-btn:hover {
-    background-color: #0056b3;
+    background-color: #e89f76fd;
 }
 
 .order-btn, .clear-cart-btn {
     background-color: #fe7223;
+    border-color: #9e4917;
     color: white;
     border: none;
     padding: 5px 25px;
@@ -95,11 +97,12 @@
 }
 
 .order-btn:hover, .clear-cart-btn:hover {
-    background-color: #218838;
+    background-color: #e89f76fd;
 }
 
 .add-to-cart-btn {
     background-color: #fe7223;
+    border-color: #9e4917;
     color: white;
     border: none;
     padding: 5px 20px;
@@ -108,7 +111,7 @@
 }
 
 .add-to-cart-btn:hover {
-    background-color: #b7bcc3;
+    background-color: #e89f76fd;
 }
 
 .menu-title {

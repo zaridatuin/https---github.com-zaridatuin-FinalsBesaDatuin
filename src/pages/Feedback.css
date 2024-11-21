@@ -25,7 +25,7 @@
 
 .feedback-container .btn-secondary {
     background-color: #fe7223;
-    border-color: #9ca9b6;
+    border-color: #9e3c04;
     width: 100%;
     padding: 10px;
     font-size: 16px;
@@ -34,8 +34,8 @@
 
 
 .feedback-container .btn-secondary:hover {
-    background-color: #fe7223;
-    border-color: #545b62;
+    background-color: #e89f76fd;
+    border-color: #9d5c36;
 }
 
 .reviews {
