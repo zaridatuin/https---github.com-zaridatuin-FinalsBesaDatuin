@@ -25,7 +25,7 @@
 
 .reservation-container .btn-primary {
     background-color: #fe7223;
-    border-color: #9ea4aa;
+    border-color: #9e4917;
     width: 100%;
     padding: 10px;
     font-size: 16px;
@@ -33,6 +33,6 @@
 }
 
 .reservation-container .btn-primary:hover {
-    background-color: #b9c5d1;
-    border-color: #5c5f63;
+    background-color: #e89f76fd;
+    border-color: #b16133fd;
 }
