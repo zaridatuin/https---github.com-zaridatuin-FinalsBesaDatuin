@@ -5,6 +5,7 @@ import 'firebase/firestore';
 import { firebaseConfig } from '../firebase/config';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Menu.css';
+import '../App.css';
 import Footer from '../components/Footer.js';
 
 
@@ -72,7 +73,7 @@ export default function Menu() {
             await addDoc(collection(db, 'orders'), order);
             setCart([]);
             setShowCart(false);
-            console.log("Order placed successfully");
+            alert("Order placed successfully");
         } catch (error) {
             console.error("Error placing order: ", error);
         }
@@ -108,7 +109,7 @@ export default function Menu() {
 
     return (
         <>
-        <div className="container">
+        <div className="container fade-in">
             <h1 className="menu-title">Menu</h1>
         
             {/* Remove the Add Item button */}

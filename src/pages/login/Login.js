@@ -28,7 +28,8 @@ export default function Login() {
 
   }
 
-  return (              
+  return (       
+    <div className="fade-in">       
       <form onSubmit={handleSubmit} className={styles['login-form']}>
 
         <h3>Login</h3>
@@ -60,5 +61,6 @@ export default function Login() {
         )}      
 
       </form>
+    </div>
   )
 }

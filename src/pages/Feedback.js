@@ -56,7 +56,7 @@ export default function Feedback() {
 
     return (
         <>
-        <div className="container feedback-container mt-5">
+        <div className="container feedback-container mt-5 fade-in">
             <h1>Customer Reviews</h1>
             <button className="btn btn-secondary mt-4" onClick={() => setShowForm(!showForm)}>
                 {showForm ? 'Hide Feedback Form' : 'Leave Feedback'}

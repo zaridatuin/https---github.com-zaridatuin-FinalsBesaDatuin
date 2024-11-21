@@ -36,8 +36,7 @@
 .cart-button img {
     width: 50px;
     height: 50px;
-    border-radius: 15px; 
-    border: 3px solid #000000; 
+    border-radius: 15px;
     z-index: 3000;
 }
 

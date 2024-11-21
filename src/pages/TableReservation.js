@@ -37,6 +37,7 @@ export default function TableReservation() {
                 people: '',
                 specialRequests: ''
             });
+            alert("Reservation Successful!");
         } catch (error) {
             console.error('Error submitting reservation:', error);
         }
@@ -44,7 +45,7 @@ export default function TableReservation() {
 
     return (
         <>
-        <div className="container reservation-container mt-5">
+        <div className="container reservation-container mt-5 fade-in">
             <h1>Table Reservation</h1>
             <form onSubmit={handleSubmit}>
                 <div className="mb-3">

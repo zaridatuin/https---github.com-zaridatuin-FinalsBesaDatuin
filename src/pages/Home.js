@@ -11,6 +11,7 @@ import { UserContext } from "../context/UserContext";
 
 
 import './Home.css'
+import '../App.css'
 import {deleteArticle, getArticles} from "../services/articleService";
 
 export default function Home() {
@@ -36,7 +37,7 @@ export default function Home() {
   const { user } = useContext(UserContext);
   return (
     <>
-    <div className="home">
+    <div className="home fade-in">
       <Carousel className="carousel-class">
 
         <Carousel.Item>
