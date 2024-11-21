@@ -46,7 +46,7 @@ export default function NavigationBar() {
                     {user && (
                         <Nav>
                             <div className="nav-button">Hello, {user.displayName}</div>
-                            <div className="nav-button"><button onClick={handleLogout}>Logout</button></div>
+                            <a onClick={handleLogout}><div className="nav-button">Logout</div></a>
                         </Nav>
                     )}
 
