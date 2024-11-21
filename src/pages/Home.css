@@ -44,7 +44,6 @@
 .home .about-tab {
   width: 50%;
   height: auto;
-  border: 1px solid black; /* REMOVE THIS AFTER */
 }
 
 /* LEFT */
@@ -58,6 +57,11 @@
   }
 
 /* RIGHT */
+  .home .right-about-tab a {
+    text-decoration: none;
+    color: white;
+  }
+
   .home .right-tabs {
     padding: 2em;
     width: 100%;
@@ -87,12 +91,4 @@
   .home .view-feedback:hover {
     color: white;
     opacity: 1;
-  }
-
-/* CONTACT FOOTER */
-  .contact-part {
-    width: 100%;
-    height: 250px;
-    border: 1px solid black;
-    background-color: #777;
   }

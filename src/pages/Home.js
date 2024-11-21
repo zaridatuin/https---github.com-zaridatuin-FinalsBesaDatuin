@@ -1,9 +1,11 @@
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, useNavigate, NavLink } from 'react-router-dom'
 import { useEffect,useState } from 'react';
 import DeleteIcon from '../assets/delete.svg'
 import EditIcon from '../assets/edit.svg'
 
 import Carousel from 'react-bootstrap/Carousel';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Footer from '../components/Footer';
 
 // styles
 import './Home.css'
@@ -76,24 +78,33 @@ export default function Home() {
         </div>
 
         <div className="about-tab right-about-tab">
-          <div className="view-menu right-tabs">
-            <h1>View Menu</h1>
-            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-          </div>
-          <div className="view-reservation right-tabs">
-            <h1>Reserve Tables</h1>
-            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-          </div>
-          <div className="view-feedback right-tabs">
-            <h1>Customer Reviews</h1>
-            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-          </div>
+          <NavLink to="/menu">
+            <div className="view-menu right-tabs">
+              <h1>View Menu</h1>
+              <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+            </div>
+          </NavLink>
+
+          <NavLink to="/reservation">
+            <div className="view-reservation right-tabs">
+              <h1>Reserve Tables</h1>
+              <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+            </div>
+          </NavLink>
+
+          <NavLink to="/feedback">
+            <div className="view-feedback right-tabs">
+              <h1>Customer Reviews</h1>
+              <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+            </div>
+          </NavLink>
         </div>
       </div>
 
     </div>
-    <div className="contact-part">
-    </div>
+
+    <Footer />
+
     </>
   )
 }
