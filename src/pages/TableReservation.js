@@ -1,4 +1,11 @@
 import React, { useState } from 'react';
+import { getFirestore, collection, addDoc } from 'firebase/firestore';
+import { initializeApp } from 'firebase/app';
+import { firebaseConfig } from '../firebase/config';
+import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
 
 export default function TableReservation() {
     const [reservation, setReservation] = useState({
@@ -15,10 +22,22 @@ export default function TableReservation() {
         setReservation({ ...reservation, [name]: value });
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log('Reservation submitted:', reservation);
-        // Add your form submission logic here
+        try {
+            await addDoc(collection(db, 'reservations'), reservation);
+            console.log('Reservation submitted:', reservation);
+            setReservation({
+                name: '',
+                email: '',
+                date: '',
+                time: '',
+                people: '',
+                specialRequests: ''
+            });
+        } catch (error) {
+            console.error('Error submitting reservation:', error);
+        }
     };
 
     return (

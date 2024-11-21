@@ -6,7 +6,6 @@ import Login from "../pages/login/Login";
 import About from "../pages/About";
 import Contact from "../pages/Contact";
 import Article from "../pages/Article";
-import FormArticle from "../pages/FormArticle";
 import Signup from "../pages/signup/Signup";
 import Menu from '../pages/Menu';
 import TableReservation from '../pages/TableReservation'; // Import the new page
@@ -19,8 +18,6 @@ export default function NavRoutes() {
             <Route path="/about" element={user ? <About /> : <Login />} />
             <Route path="/contact" element={user ? <Contact /> : <Login />} />
             <Route path="/articles/:urlId" element={user ? <Article /> : <Login />} />
-            <Route path="/edit/:urlId" element={user ? <FormArticle /> : <Login />} />
-            <Route path="/new" element={user ? <FormArticle /> : <Login />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/menu" element={<Menu />} />

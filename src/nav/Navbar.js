@@ -46,13 +46,8 @@ export default function Navbar() {
                             <NavLink className="nav-link" to="/menu">Menu</NavLink>
                         </li>
                         <li className="nav-item">
-                            <NavLink className="nav-link" to="/reservation">Reservation</NavLink> {/* Add the new link */}
+                            <NavLink className="nav-link" to="/reservation">Reservation</NavLink>
                         </li>
-                        {user && (
-                            <li className="nav-item">
-                                <NavLink className="nav-link" to="/new">New Article</NavLink>
-                            </li>
-                        )}
                         {!user && (
                             <>
                                 <li className="nav-item">
