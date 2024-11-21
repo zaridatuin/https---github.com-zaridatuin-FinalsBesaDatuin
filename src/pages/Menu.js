@@ -13,6 +13,8 @@ export default function Menu() {
     const [menuItems, setMenuItems] = useState([]);
     const [newItem, setNewItem] = useState({ title: '', description: '', price: '', image: '' });
     const [showForm, setShowForm] = useState(false);
+    const [cart, setCart] = useState([]);
+    const [showCart, setShowCart] = useState(false);
 
     useEffect(() => {
         const fetchMenuItems = async () => {
@@ -47,6 +49,33 @@ export default function Menu() {
         }
     };
 
+    const handleAddToCart = (item, quantity) => {
+        const existingItem = cart.find(cartItem => cartItem.title === item.title);
+        if (existingItem) {
+            existingItem.quantity += quantity;
+            setCart([...cart]);
+        } else {
+            setCart([...cart, { ...item, quantity }]);
+        }
+    };
+
+    const handleOrder = async () => {
+        const totalPrice = cart.reduce((total, item) => total + item.price * item.quantity, 0);
+        const order = {
+            items: cart,
+            status: 'pending',
+            totalPrice
+        };
+        try {
+            await addDoc(collection(db, 'orders'), order);
+            setCart([]);
+            setShowCart(false);
+            console.log("Order placed successfully");
+        } catch (error) {
+            console.error("Error placing order: ", error);
+        }
+    };
+
     return (
         <div className="container">
             <h1>Menu</h1>
@@ -71,6 +100,21 @@ export default function Menu() {
                     <button> Add Item</button>
                 </form>
             )}
+            <button className="cart-button" onClick={() => setShowCart(!showCart)}>
+                <img src="/path/to/cart-icon.png" alt="Cart" />
+            </button>
+            {showCart && (
+                <div className="cart">
+                    <h2>Cart</h2>
+                    {cart.map((item, index) => (
+                        <div key={index}>
+                            <p>{item.title} x {item.quantity}</p>
+                        </div>
+                    ))}
+                    <p>Total: ${cart.reduce((total, item) => total + item.price * item.quantity, 0)}</p>
+                    <button onClick={handleOrder}>Order</button>
+                </div>
+            )}
             <div className="row">
                 {menuItems.map((item, index) => (
                     <div key={index} className="col-md-4 mb-4">
@@ -80,6 +124,7 @@ export default function Menu() {
                                 <h5 className="card-title">{item.title}</h5>
                                 <p className="card-text">{item.description}</p>
                                 <p className="card-text"><strong>${item.price}</strong></p>
+                                <button className="btn btn-primary" onClick={() => handleAddToCart(item, 1)}>Add to Cart</button>
                             </div>
                         </div>
                     </div>
