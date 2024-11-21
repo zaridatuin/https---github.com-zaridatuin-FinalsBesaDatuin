@@ -30,8 +30,6 @@ export default function NavigationBar() {
                     {user && (
                         <Nav className="me-auto">
                             <NavLink to="/" className="hover-active-design"><div className="nav-button">Home</div></NavLink>
-                            <NavLink to="/about" className="hover-active-design"><div className="nav-button">About</div></NavLink>
-                            <NavLink to="/contact" className="hover-active-design"><div className="nav-button">Contact</div></NavLink>
                             <NavLink to="/menu" className="hover-active-design"><div className="nav-button">Menu</div></NavLink>
                             <NavLink to="/reservation" className="hover-active-design"><div className="nav-button">Reservation</div></NavLink>
                             <NavLink to="/feedback" className="hover-active-design"><div className="nav-button">Feedback</div></NavLink>

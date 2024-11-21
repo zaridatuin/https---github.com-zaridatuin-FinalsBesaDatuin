@@ -9,7 +9,7 @@ import Footer from '../components/Footer';
 
 import { UserContext } from "../context/UserContext";
 
-// styles
+
 import './Home.css'
 import {deleteArticle, getArticles} from "../services/articleService";
 

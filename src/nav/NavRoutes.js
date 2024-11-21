@@ -3,8 +3,6 @@ import { UserContext } from "../context/UserContext";
 import { Navigate, Route, Routes } from "react-router-dom";
 import Home from "../pages/Home";
 import Login from "../pages/login/Login";
-import About from "../pages/About";
-import Contact from "../pages/Contact";
 import Signup from "../pages/signup/Signup";
 import Menu from '../pages/Menu';
 import TableReservation from '../pages/TableReservation';
@@ -15,14 +13,11 @@ export default function NavRoutes() {
     return (
         <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/about" element={user ? <About /> : <Login />} />
-            <Route path="/contact" element={user ? <Contact /> : <Login />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/menu" element={<Menu />} />
-            <Route path="/reservation" element={<TableReservation />} /> {/* Add the new route */}
-            <Route path="/feedback" element={user ? <Feedback /> : <Login />} />
             <Route path="/reservation" element={<TableReservation />} />
+            <Route path="/feedback" element={user ? <Feedback /> : <Login />} />
             <Route path="/*" element={<Navigate to="/" />} />
         </Routes>
     );
