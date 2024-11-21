@@ -1,6 +1,6 @@
 import './App.css';
 import { BrowserRouter } from 'react-router-dom'
-import Navbar from './nav/Navbar'
+import NavigationBar from './nav/NavigationBar'
 import NavRoutes from './nav/NavRoutes'
 import {UserProvider} from './context/UserContext';
 
@@ -9,7 +9,7 @@ function App() {
     <UserProvider>
       <div className="App">
         <BrowserRouter>
-          <Navbar />
+          <NavigationBar />
           <NavRoutes />
         </BrowserRouter>
       </div>
