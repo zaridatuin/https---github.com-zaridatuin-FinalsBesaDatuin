@@ -20,7 +20,7 @@ export default function NavigationBar() {
 
     return (
         <>
-        <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">
+        <Navbar fixed="top" collapseOnSelect expand="lg" className="bg-body-tertiary">
             <Container>
                 <Navbar.Brand><img src="../img/TwosLogo.png" alt="TwosLogo" className="nav-logo"/></Navbar.Brand>
 

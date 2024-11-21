@@ -3,6 +3,8 @@ import { useEffect,useState } from 'react';
 import DeleteIcon from '../assets/delete.svg'
 import EditIcon from '../assets/edit.svg'
 
+import Carousel from 'react-bootstrap/Carousel';
+
 // styles
 import './Home.css'
 import {deleteArticle, getArticles} from "../services/articleService";
@@ -29,24 +31,61 @@ export default function Home() {
 
   return (
     <div className="home">
-      <h2>Articles</h2>      
-      {articles && articles.map(article => (
-        <div key={article.id} className="card">
-          <h3>{article.title}</h3>
-          <p>Written by {article.author}</p>
-          <Link to={`/articles/${article.id}`}>Read More...</Link>
-          <img 
-            className="icon"
-            onClick={() => handleDelete(article.id)}
-            src={DeleteIcon} alt="delete icon" 
-          />
-          <img 
-            className="icon"
-            onClick={() => handleEdit(article.id)}
-            src={EditIcon} alt="edit icon" 
-          />
+      <Carousel className="carousel-class">
+
+        <Carousel.Item>
+          <div className="img-container">
+            <img src="../img/B1.jpg" alt='B1' />
+          </div>
+          <Carousel.Caption>
+            <h3>First slide label</h3>
+            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+          </Carousel.Caption>
+        </Carousel.Item>
+
+        <Carousel.Item>
+          <div className="img-container">
+            <img src="../img/B8.jpg" alt='B8' />
+          </div>
+          <Carousel.Caption>
+            <h3>Second slide label</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </Carousel.Caption>
+        </Carousel.Item>
+
+        <Carousel.Item>
+          <div className="img-container">
+            <img src="../img/B5.jpg" alt='B5' />
+          </div>
+          <Carousel.Caption>
+            <h3>Third slide label</h3>
+            <p>
+              Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+            </p>
+          </Carousel.Caption>
+        </Carousel.Item>
+
+      </Carousel>
+
+      <div className="about-part">
+
+        <div className="about-tab left-about-tab">
+          <h1>About Us</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <iframe title="twosmap" loading="lazy" allowfullscreen src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=twos&zoom=13&maptype=roadmap"></iframe>
         </div>
-      ))}
+
+        <div className="about-tab right-about-tab">
+        
+        </div>
+
+      </div>
+
+      <div className="contact-part">
+
+
+      </div>
+
     </div>
   )
 }

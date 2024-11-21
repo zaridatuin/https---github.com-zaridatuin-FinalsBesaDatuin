@@ -19,7 +19,7 @@ export default function NavRoutes() {
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/menu" element={<Menu />} />
-            <Route path="/reservation" element={<TableReservation />} /> {/* Add the new route */}
+            <Route path="/reservation" element={<TableReservation />} />
             <Route path="/*" element={<Navigate to="/" />} />
         </Routes>
     );

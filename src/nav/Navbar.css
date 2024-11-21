@@ -1,6 +1,7 @@
 .navbar {
     height: 7vh !important;
     padding: 0px !important;
+    opacity: 0.95;
 }
 
 .navbar .navbar-brand {
