@@ -76,8 +76,32 @@ export default function Menu() {
         }
     };
 
+    const handleRemoveFromCart = (index) => {
+        const newCart = [...cart];
+        newCart.splice(index, 1);
+        setCart(newCart);
+    };
+
+    const handleClearCart = () => {
+        setCart([]);
+    };
+
     const getImage = (imageName) => {
         return `${process.env.PUBLIC_URL}/img/${imageName}`;
+    };
+
+    const handleIncrementQuantity = (index) => {
+        const newCart = [...cart];
+        newCart[index].quantity += 1;
+        setCart(newCart);
+    };
+
+    const handleDecrementQuantity = (index) => {
+        const newCart = [...cart];
+        if (newCart[index].quantity > 1) {
+            newCart[index].quantity -= 1;
+            setCart(newCart);
+        }
     };
 
     return (
@@ -105,18 +129,23 @@ export default function Menu() {
                 </form>
             )}
             <button className="cart-button" onClick={() => setShowCart(!showCart)}>
-                <img src="/path/to/cart-icon.png" alt="Cart" />
+                <img src="../img/cart.png" alt="Cart" />
             </button>
             {showCart && (
                 <div className="cart">
+                    <button className="close-cart" onClick={() => setShowCart(false)}>X</button>
                     <h2>Cart</h2>
                     {cart.map((item, index) => (
                         <div key={index}>
-                            <p>{item.title} x {item.quantity}</p>
+                            <p>{item.title} x {item.quantity} 
+                                <button onClick={() => handleDecrementQuantity(index)}>-</button>
+                                <button onClick={() => handleIncrementQuantity(index)}>+</button>
+                            </p>
                         </div>
                     ))}
                     <p>Total: ${cart.reduce((total, item) => total + item.price * item.quantity, 0)}</p>
                     <button onClick={handleOrder}>Order</button>
+                    <button onClick={handleClearCart}>Clear Cart</button>
                 </div>
             )}
             <div className="row">
@@ -127,8 +156,8 @@ export default function Menu() {
                             <div className="card-body">
                                 <h5 className="card-title">{item.title}</h5>
                                 <p className="card-text">{item.description}</p>
-                                <p className="card-text"><strong>${item.price}</strong></p>
-                                <button className="btn btn-primary" onClick={() => handleAddToCart(item, 1)}>Add to Cart</button>
+                                <p className="card-text"><strong>₱{item.price}</strong></p>
+                                <button onClick={() => handleAddToCart(item, 1)}>Add to Cart</button>
                             </div>
                         </div>
                     </div>
