@@ -4,6 +4,7 @@ import { UserContext } from '../context/UserContext';
 import { useNavigate } from 'react-router-dom';
 import { logout } from "../services/authService";
 import './Navbar.css';
+import Footer from '../components/Footer';
 
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
