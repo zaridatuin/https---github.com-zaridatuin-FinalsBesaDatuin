@@ -23,7 +23,7 @@
 }
 
 .feedback-container .btn-secondary {
-    background-color: #939da6;
+    background-color: #fe7223;
     border-color: #9ca9b6;
     width: 100%;
     padding: 10px;
@@ -33,7 +33,7 @@
 
 
 .feedback-container .btn-secondary:hover {
-    background-color: #5a6268;
+    background-color: #fe7223;
     border-color: #545b62;
 }
 
@@ -66,7 +66,7 @@
 
 .star-rating {
     font-size: 1.5em;
-    color: #ffcc00;
+    color: #fe7223;
     cursor: pointer;
 }
 

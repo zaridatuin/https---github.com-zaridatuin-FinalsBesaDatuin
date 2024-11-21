@@ -71,7 +71,7 @@
 }
 
 .increment-btn, .decrement-btn {
-    background-color: #777219;
+    background-color: #fe7223;
     color: white;
     border: none;
     padding: 2px 15px;
@@ -85,7 +85,7 @@
 }
 
 .order-btn, .clear-cart-btn {
-    background-color: #777219;
+    background-color: #fe7223;
     color: white;
     border: none;
     padding: 5px 25px;
@@ -99,7 +99,7 @@
 }
 
 .add-to-cart-btn {
-    background-color: #676d73;
+    background-color: #fe7223;
     color: white;
     border: none;
     padding: 5px 20px;
