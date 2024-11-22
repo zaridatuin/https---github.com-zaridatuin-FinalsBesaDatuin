@@ -1,12 +1,8 @@
 import { Link, useNavigate, NavLink } from 'react-router-dom'
 import { useEffect, useState, useContext } from 'react';
-import DeleteIcon from '../assets/delete.svg'
-import EditIcon from '../assets/edit.svg'
-
 import Carousel from 'react-bootstrap/Carousel';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Footer from '../components/Footer.js';
-
 import { UserContext } from "../context/UserContext";
 
 
@@ -16,23 +12,9 @@ import {deleteArticle, getArticles} from "../services/articleService";
 
 export default function Home() {
 
-  const [articles, setArticles] = useState(null);
-  const [search, setSearch] = useState(null)
 
   const navigate = useNavigate()
 
-  useEffect(() => {
-      const unsubscribe = getArticles(setArticles)
-      return ()=> unsubscribe();
-   },[])
-  
-  const handleDelete = async (id) => {
-    await deleteArticle(id);
-  }
-
-  const handleEdit = async (id) => {
-    navigate(`/edit/${id}`)
-  }
 
   const { user } = useContext(UserContext);
   return (

@@ -7,7 +7,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './Menu.css';
 import '../App.css';
 import Footer from '../components/Footer.js';
-
+import './OrderForm.css';
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
@@ -18,6 +18,12 @@ export default function Menu() {
     const [showForm, setShowForm] = useState(false);
     const [cart, setCart] = useState([]);
     const [showCart, setShowCart] = useState(false);
+    const [showOrderForm, setShowOrderForm] = useState(false);
+    const [orderDetails, setOrderDetails] = useState({
+        name: '',
+        address: '',
+        paymentMethod: ''
+    });
 
     useEffect(() => {
         const fetchMenuItems = async () => {
@@ -73,6 +79,31 @@ export default function Menu() {
             await addDoc(collection(db, 'orders'), order);
             setCart([]);
             setShowCart(false);
+            alert("Order placed successfully");
+        } catch (error) {
+            console.error("Error placing order: ", error);
+        }
+    };
+
+    const handleOrderInputChange = (e) => {
+        const { name, value } = e.target;
+        setOrderDetails({ ...orderDetails, [name]: value });
+    };
+
+    const handleOrderSubmit = async (e) => {
+        e.preventDefault();
+        const totalPrice = cart.reduce((total, item) => total + item.price * item.quantity, 0);
+        const order = {
+            ...orderDetails,
+            items: cart,
+            status: 'pending',
+            totalPrice
+        };
+        try {
+            await addDoc(collection(db, 'orders'), order);
+            setCart([]);
+            setShowCart(false);
+            setShowOrderForm(false);
             alert("Order placed successfully");
         } catch (error) {
             console.error("Error placing order: ", error);
@@ -149,8 +180,34 @@ export default function Menu() {
                         </div>
                     ))}
                     <p>Total: ₱{cart.reduce((total, item) => total + item.price * item.quantity, 0)}</p>
-                    <button className='order-btn' onClick={handleOrder}>Order</button>
+                    <button className='order-btn' onClick={() => setShowOrderForm(true)}>Order</button>
                     <button className='clear-cart-btn'onClick={handleClearCart}>Clear Cart</button>
+                </div>
+            )}
+            {showOrderForm && (
+                <div className="order-form-overlay">
+                    <div className="order-form-container">
+                        <form onSubmit={handleOrderSubmit}>
+                            <div className="mb-3">
+                                <label htmlFor="name" className="form-label">Name</label>
+                                <input type="text" className="form-control" id="name" name="name" value={orderDetails.name} onChange={handleOrderInputChange} required />
+                            </div>
+                            <div className="mb-3">
+                                <label htmlFor="address" className="form-label">Address</label>
+                                <input type="text" className="form-control" id="address" name="address" value={orderDetails.address} onChange={handleOrderInputChange} required />
+                            </div>
+                            <div className="mb-3">
+                                <label htmlFor="paymentMethod" className="form-label">Payment Method</label>
+                                <select className="form-control" id="paymentMethod" name="paymentMethod" value={orderDetails.paymentMethod} onChange={handleOrderInputChange} required>
+                                    <option value="">Select Payment Method</option>
+                                    <option value="Credit Card">Credit Card</option>
+                                    <option value="Cash on Delivery">Cash on Delivery</option>
+                                </select>
+                            </div>
+                            <button type="submit" className="btn btn-primary">Submit Order</button>
+                            <button type="button" className="btn btn-secondary" onClick={() => setShowOrderForm(false)}>Cancel</button>
+                        </form>
+                    </div>
                 </div>
             )}
             <div className="row">
