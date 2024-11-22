@@ -2,14 +2,13 @@ import React, { useEffect, useState } from 'react';
 import { getFirestore, collection, getDocs, addDoc } from 'firebase/firestore';
 import { initializeApp } from 'firebase/app';
 import 'firebase/firestore';
-import { firebaseConfig } from '../firebase/config';
+import { firebaseConfig, app } from '../firebase/config'; // Import the initialized app
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Menu.css';
 import '../App.css';
 import Footer from '../components/Footer.js';
 import './OrderForm.css';
 
-const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
 export default function Menu() {

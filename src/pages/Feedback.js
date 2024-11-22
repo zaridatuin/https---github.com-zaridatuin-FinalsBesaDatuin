@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { getFirestore, collection, getDocs, addDoc } from 'firebase/firestore';
-import { initializeApp } from 'firebase/app';
-import { firebaseConfig } from '../firebase/config';
+import { app } from '../firebase/config'; // Import the initialized app
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Feedback.css';
 import Footer from '../components/Footer'
 
-const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
 export default function Feedback() {

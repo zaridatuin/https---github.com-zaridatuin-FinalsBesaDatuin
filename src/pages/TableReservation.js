@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
 import { getFirestore, collection, addDoc } from 'firebase/firestore';
 import { initializeApp } from 'firebase/app';
-import { firebaseConfig } from '../firebase/config';
+import { firebaseConfig, app } from '../firebase/config'; // Import the initialized app
 import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
 import './TableReservation.css'; // Import the CSS file
 import Footer from '../components/Footer.js';
 
-const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
 export default function TableReservation() {

@@ -1,20 +1,20 @@
-import {initializeApp} from 'firebase/app'
-import {getFirestore} from 'firebase/firestore'
-import {getAuth} from "firebase/auth";
+import { initializeApp } from 'firebase/app';
+import { getFirestore } from 'firebase/firestore';
+import { getAuth } from 'firebase/auth';
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDMbAL16428sWP2x92YZLKxLnPwcyfpBIE",
-  authDomain: "labact-f210c.firebaseapp.com",
-  projectId: "labact-f210c",
-  storageBucket: "labact-f210c.firebasestorage.app",
-  messagingSenderId: "962539179627",
-  appId: "1:962539179627:web:73f3ec6add0332b5816b2e",
-  measurementId: "G-5995NX31WY"
+  apiKey: "AIzaSyCSfvHxPO8IC_k6_Q8kK6iLe535dlucqm0",
+  authDomain: "buytwosmarikina.firebaseapp.com",
+  projectId: "buytwosmarikina",
+  storageBucket: "buytwosmarikina.firebasestorage.app",
+  messagingSenderId: "1071235938485",
+  appId: "1:1071235938485:web:84b200cd2e5bb1966466fc",
+  measurementId: "G-EZ6L5QKYTS"
 };
 
-initializeApp(firebaseConfig);
+const app = initializeApp(firebaseConfig);
 
-const db = getFirestore();
-const auth = getAuth();
+const db = getFirestore(app);
+const auth = getAuth(app);
 
-export { db, auth, firebaseConfig }
+export { app, db, auth, firebaseConfig };

@@ -4,6 +4,7 @@ import { useNavigate, NavLink } from 'react-router-dom'
 // styles
 import styles from './Login.module.css'
 import {login} from "../../services/authService";
+import { app } from '../../firebase/config'; // Import the initialized app
 
 export default function Login() {
   const email = useRef()

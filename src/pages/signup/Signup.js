@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom'
 // styles
 import styles from './Signup.module.css'
 import {create_user} from "../../services/authService";
+import { app } from '../../firebase/config'; // Import the initialized app
 
 export default function Signup() {
   const emailRef = useRef()
