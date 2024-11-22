@@ -19,7 +19,6 @@ export default function Signup() {
     try{
       await create_user(emailRef.current.value, passwordRef.current.value, displayNameRef.current.value)
       navigate('/')
-      setIsPending(false)
     }catch(err){
       setError(err.message)
       setIsPending(false)
@@ -27,6 +26,7 @@ export default function Signup() {
   }
 
   return (
+    <div className="signup-container fade-in">
       <form onSubmit={handleSubmit} className={styles['signup-form']}>
 
         <h3>Sign Up</h3>
@@ -50,5 +50,6 @@ export default function Signup() {
         { isPending && <button className="btn" disabled>Loading...</button> }
         { error && <p>{error}</p> }
       </form>
+    </div>
   )
 }

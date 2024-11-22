@@ -4,6 +4,7 @@ import { initializeApp } from 'firebase/app';
 import { firebaseConfig } from '../firebase/config';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Feedback.css';
+import Footer from '../components/Footer'
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
@@ -54,7 +55,8 @@ export default function Feedback() {
     };
 
     return (
-        <div className="container feedback-container mt-5">
+        <>
+        <div className="container feedback-container mt-5 fade-in">
             <h1>Customer Reviews</h1>
             <button className="btn btn-secondary mt-4" onClick={() => setShowForm(!showForm)}>
                 {showForm ? 'Hide Feedback Form' : 'Leave Feedback'}
@@ -70,7 +72,7 @@ export default function Feedback() {
                         <div className="star-rating">
                             {[1, 2, 3, 4, 5].map((star) => (
                                 <span key={star} onClick={() => handleStarClick(star)}>
-                                    {star <= feedback.rating ? '��' : '☆'}
+                                    {star <= feedback.rating ? '★' : '☆'}
                                 </span>
                             ))}
                         </div>
@@ -92,5 +94,8 @@ export default function Feedback() {
                 ))}
             </div>
         </div>
+        
+        <Footer />
+        </>
     );
 }

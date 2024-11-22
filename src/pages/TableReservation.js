@@ -4,6 +4,7 @@ import { initializeApp } from 'firebase/app';
 import { firebaseConfig } from '../firebase/config';
 import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
 import './TableReservation.css'; // Import the CSS file
+import Footer from '../components/Footer.js';
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
@@ -36,13 +37,15 @@ export default function TableReservation() {
                 people: '',
                 specialRequests: ''
             });
+            alert("Reservation Successful!");
         } catch (error) {
             console.error('Error submitting reservation:', error);
         }
     };
 
     return (
-        <div className="container reservation-container mt-5">
+        <>
+        <div className="container reservation-container mt-5 fade-in">
             <h1>Table Reservation</h1>
             <form onSubmit={handleSubmit}>
                 <div className="mb-3">
@@ -72,5 +75,7 @@ export default function TableReservation() {
                 <button type="submit" className="btn btn-primary">Submit Reservation</button>
             </form>
         </div>
+        <Footer />
+        </>
     );
 }

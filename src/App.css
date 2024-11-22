@@ -1,6 +1,7 @@
 .App {
   margin: 0 auto;
   padding-top: 7vh;
+  height: 100%;
 }
 
 @font-face {
@@ -23,4 +24,19 @@ h1, h2, h3, h4, h5, h6 {
 
 p, li, button, span, input {
   font-family: 'Poppins' !important;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn .6s ease-in-out;
 }

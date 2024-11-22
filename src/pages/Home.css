@@ -65,7 +65,7 @@
   .home .right-tabs {
     padding: 2em;
     width: 100%;
-    height: calc(100%/3);
+    height: calc(100%/2.999);
     opacity: 0.9;
     transition: opacity 0.3s ease;
   }
